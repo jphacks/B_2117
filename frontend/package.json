@@ -1,0 +1,99 @@
+{
+  "name": "frontend",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@chakra-ui/react": "^1.6.10",
+    "@emotion/react": "^11",
+    "@emotion/styled": "^11",
+    "@testing-library/jest-dom": "^5.11.4",
+    "@testing-library/react": "^11.1.0",
+    "@testing-library/user-event": "^12.1.10",
+    "@types/jest": "^26.0.15",
+    "@types/node": "^12.0.0",
+    "@types/react": "^17.0.0",
+    "@types/react-dom": "^17.0.0",
+    "framer-motion": "^4",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-scripts": "4.0.3",
+    "typescript": "^4.1.2",
+    "web-vitals": "^1.0.1"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "storybook": "start-storybook -p 6006 -s public",
+    "build-storybook": "build-storybook -s public",
+    "lint": "eslint 'src/**/*.{js,jsx,ts,tsx}'",
+    "lint:fix": "eslint --fix 'src/**/*.{js,jsx,ts,tsx}'",
+    "preinstall": "typesync || :",
+    "precommit": "lint-staged"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ],
+    "overrides": [
+      {
+        "files": [
+          "**/*.stories.*"
+        ],
+        "rules": {
+          "import/no-anonymous-default-export": "off"
+        }
+      }
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "@storybook/addon-actions": "^6.3.12",
+    "@storybook/addon-essentials": "^6.3.12",
+    "@storybook/addon-links": "^6.3.12",
+    "@storybook/node-logger": "^6.3.12",
+    "@storybook/preset-create-react-app": "^3.2.0",
+    "@storybook/react": "^6.3.12",
+    "@types/eslint-plugin-prettier": "^2.2.0",
+    "@types/prettier": "^1.19.0",
+    "@types/stylelint": "^9.10.1",
+    "@types/testing-library__jest-dom": "^5.14.1",
+    "@typescript-eslint/eslint-plugin": "^2.12.0",
+    "@typescript-eslint/parser": "^2.12.0",
+    "eslint-config-airbnb": "^18.0.1",
+    "eslint-config-prettier": "^6.7.0",
+    "eslint-plugin-import": "^2.19.1",
+    "eslint-plugin-jest": "^23.1.1",
+    "eslint-plugin-jsx-a11y": "^6.2.3",
+    "eslint-plugin-prefer-arrow": "^1.1.7",
+    "eslint-plugin-prettier": "^3.1.2",
+    "eslint-plugin-react": "^7.17.0",
+    "eslint-plugin-react-hooks": "^2.3.0",
+    "prettier": "^1.19.1",
+    "prettier-stylelint": "^0.4.2",
+    "stylelint": "^12.0.0",
+    "stylelint-config-prettier": "^8.0.0",
+    "stylelint-config-standard": "^19.0.0",
+    "stylelint-order": "^3.1.1",
+    "typesync": "^0.8.0"
+  },
+  "lint-staged": {
+    "src/**/*.{js,jsx,ts,tsx}": [
+      "eslint --fix",
+      "git add"
+    ]
+  }
+}
