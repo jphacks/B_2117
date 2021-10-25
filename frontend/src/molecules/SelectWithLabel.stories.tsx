@@ -29,3 +29,12 @@ NoPlaceholder.args = {
   options,
   width: '400px',
 };
+
+export const htmlFor = Template.bind({});
+htmlFor.args = {
+  htmlFor: 'option-selector',
+  label: 'Options',
+  placeholder: 'select one!',
+  options,
+  width: '400px',
+};
