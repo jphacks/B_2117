@@ -6,8 +6,9 @@ import {
   Center,
   Stack,
   Select,
+  SimpleGrid,
 } from '@chakra-ui/react';
-import { FormLabel  } from '@chakra-ui/react';
+import { FormLabel } from '@chakra-ui/react';
 import { useForm } from 'react-hook-form';
 import {
   years,
@@ -35,9 +36,9 @@ const SyllabusSearchForm: React.FC = () => {
   };
 
   return (
-    <Box w="70%" borderWidth="1px" borderRadius="lg" p="30px">
+    <Box borderWidth="1px" borderRadius="lg" p="30px">
       <form onSubmit={handleSubmit(onSubmit)}>
-        <Stack spacing={3}>
+        <SimpleGrid columns={2} spacing={8} mb="30px">
           <FormControl>
             <FormLabel htmlFor="year">年度</FormLabel>
             <Select id="year" {...register('year')}>
@@ -88,12 +89,12 @@ const SyllabusSearchForm: React.FC = () => {
               ))}
             </Select>
           </FormControl>
-          <Center>
-            <Button type="submit" colorScheme="blue" isLoading={isSubmitting}>
-              検索
-            </Button>
-          </Center>
-        </Stack>
+        </SimpleGrid>
+        <Center>
+          <Button type="submit" colorScheme="blue" isLoading={isSubmitting}>
+            検索
+          </Button>
+        </Center>
       </form>
     </Box>
   );
