@@ -20,31 +20,19 @@ const SyllabusSearchForm: React.FC = () => {
             <SelectWithLabel label="年度" options={years} />
           </FormControl>
           <FormControl>
-            <SelectWithLabel label="期間" options={periods}></SelectWithLabel>
+            <SelectWithLabel label="期間" options={periods} />
           </FormControl>
           <FormControl>
-            <SelectWithLabel
-              label="曜日"
-              options={dayOfWeeks}
-            ></SelectWithLabel>
+            <SelectWithLabel label="曜日" options={dayOfWeeks} />
           </FormControl>
           <FormControl>
-            <SelectWithLabel
-              label="時限"
-              options={periodOfTimes}
-            ></SelectWithLabel>
+            <SelectWithLabel label="時限" options={periodOfTimes} />
           </FormControl>
           <FormControl>
-            <SelectWithLabel
-              label="課程"
-              options={degreePrograms}
-            ></SelectWithLabel>
+            <SelectWithLabel label="課程" options={degreePrograms} />
           </FormControl>
           <FormControl>
-            <SelectWithLabel
-              label="開講形式"
-              options={TypeOfLessons}
-            ></SelectWithLabel>
+            <SelectWithLabel label="開講形式" options={TypeOfLessons} />
           </FormControl>
           <Center>
             <Button type="submit" colorScheme="blue">
