@@ -43,7 +43,7 @@ export const degreePrograms = [
   { text: 'その他科目', value: 'others' },
 ];
 
-export const TypeOfLessons = [
+export const typeOfLessons = [
   { text: '全て', value: 'all' },
   { text: '対面', value: 'offline' },
   { text: 'インターネット', value: 'online' },
