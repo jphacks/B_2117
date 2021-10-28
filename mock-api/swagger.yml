@@ -1,0 +1,150 @@
+swagger: "2.0"
+info:
+  description: "API for JPHacks "
+  version: "1.0.0"
+  title: "より便利なシラバス"
+host: "hoge.com"
+basePath: "/api"
+schemes:
+- "https"
+- "http"
+tags: 
+  - name: Syllabus
+    description: シラバス検索
+  - name: Grade-distribution
+    description: 成績分布検索
+  - name: Books
+    description: 書籍関連のAPI
+paths:
+  '/search/syllabus':
+    get:
+      tags: 
+        - Syllabus
+      summary: 'シラバスの科目検索を行う'
+      parameters: 
+        - in: query
+          name: year
+          type: string
+          required: true
+          description: 年度
+        - in: query
+          name: period
+          type: string
+          required: true
+          description: 学期
+        - in: query
+          name: dayOfWeek
+          type: string
+          required: true
+          description: 曜日
+        - in: query
+          name: periodOfTime
+          type: string
+          required: true
+          description: 時限
+        - in: query
+          name: degree
+          type: string
+          required: true
+          description: 学部、大学院など
+        - in: query
+          name: typeOfCourse
+          type: string
+          required: true
+          description: 開講形式
+        - in: query
+          name: keyword
+          type: string
+          required: false
+          description: 検索キーワード
+      responses:
+        '200':
+          description: 'ok'
+  '/search/syllabus/{year}/detail/{courseId}':
+    get:
+      tags: 
+        - Syllabus
+      summary: 'シラバスの科目詳細を検索する'
+      parameters:
+        - in: path
+          name: courseId
+          type: string
+          required: true
+          description: 科目ID
+        - in: path
+          name: year
+          type: string
+          required: true
+          description: 年度
+      responses: 
+        '200':
+          description: 'ok'
+  '/syllabus/similar-course/{courseId}':
+    get:
+      tags: 
+        - Syllabus
+      summary: '類似科目のシラバスを取得'
+      parameters: 
+        - in: path
+          name: courseId
+          type: string
+          required: true
+          description: 科目ID
+      responses:
+        '200':
+          description: 'ok'
+  '/grade-distribution/{courseId}':
+    get:
+      tags: 
+        - Grade-distribution
+      summary: '過去n年分の成績分布を取得する'
+      parameters:         
+        - in: path
+          name: courseId
+          type: string
+          required: true
+          description: 科目ID
+        - in: query
+          name: count
+          type: string
+          required: false
+          default: 5
+          description: 過去何年分の分布を取得するか
+      responses:
+        '200':
+          description: 'ok'
+  '/grade-distribution/{year}/{courseId}':
+    get: 
+      tags: 
+        - Grade-distribution
+      summary: '成績分布を取得する'
+      parameters:         
+        - in: path
+          name: courseId
+          type: string
+          required: true
+          description: 科目ID
+        - in: path
+          name: year
+          type: string
+          required: true
+          description: 年度
+      responses:
+        '200':
+          description: 'ok'
+  '/books/library/check':
+    get: 
+      tags: 
+        - Books
+      summary: '図書館における本の貸し出し状況・蔵書の有無を取得'
+      parameters: 
+        - in: query
+          name: keyword
+          type: string
+          required: true
+          description: キーワード
+      responses: 
+        '200':
+          description: 'ok'
+        
+    
