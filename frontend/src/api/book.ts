@@ -6,14 +6,20 @@ export const isRightBook = (title: string, query: string) => {
 
 export const searchISBN = async (keyword?: string) => {
   if (keyword === undefined) return { ISBN_10: null, ISBN_13: null };
-  const res = await fetch(
-    `https://www.googleapis.com/books/v1/volumes?q=${keyword}`,
-  );
+  let res;
+  try {
+    res = await fetch(
+      `https://www.googleapis.com/books/v1/volumes?q=${keyword}`,
+    );
+  } catch {
+    return { ISBN_10: null, ISBN_13: null };
+  }
+
   const data = await res.json();
 
   if (data.totalItems === 0) return { ISBN_10: null, ISBN_13: null };
   const firstItem = data.items[0];
-  console.log(data.items[0].volumeInfo);
+
   if (
     !isRightBook(firstItem?.volumeInfo?.title, keyword) ||
     firstItem.volumeInfo.industryIdentifiers.length < 2
