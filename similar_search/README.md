@@ -18,7 +18,7 @@ MeCabの辞書はmecab-ipadic-NEologd
 https://github.com/neologd/mecab-ipadic-neologd
 
 ## 使い方
-「2021.json」をダウンロードして，フォルダに配置する．(./data/2021.json)
+「2021.json」をダウンロードして，フォルダに配置する．(./data/2021.json)(データ非公開)
 
 
 英語用形態素解析器の準備(ターミナルなどで事前準備)(3.3G)
