@@ -35,10 +35,21 @@ func getSyllabusResults(c echo.Context) error {
 	return c.String(http.StatusOK, string(bytes))
 }
 
+func getCourseDetail(c echo.Context) error {
+	fmt.Println(c.Param(("year")), c.Param("courseId"))
+	bytes, err := ioutil.ReadFile("./data/syllabus/syllabus_detail.json")
+	if err != nil {
+		return c.String(http.StatusNotFound, "No Details Here")
+	}
+
+	return c.String(http.StatusOK, string(bytes))
+}
+
 func main() {
 	e := echo.New()
 	e.Use(middleware.CORS())
 	e.GET("/grade-distribution/:courseId", getGradeDists)
 	e.GET("/search/syllabus", getSyllabusResults)
+	e.GET("/search/syllabus/:year/detail/:courseId", getCourseDetail)
 	e.Logger.Fatal(e.Start(":10000"))
 }
