@@ -12,6 +12,7 @@ import {
   Td,
   TableCaption,
 } from '@chakra-ui/react';
+import { Link } from 'react-router-dom';
 import SyllabusSearchForm from '../organisms/SyllabusSearchForm';
 
 export const SyllabusSearchPage: React.FC = () => {
@@ -62,6 +63,7 @@ export const SyllabusSearchPage: React.FC = () => {
               ({
                 code,
                 name,
+                year,
                 instructors,
                 day,
                 classPeriod,
@@ -72,7 +74,7 @@ export const SyllabusSearchPage: React.FC = () => {
                   <Td>
                     {code}
                     <br />
-                    <a>{name}</a>
+                    <Link to={`course/detail/${year}/${code}`}>{name}</Link>
                   </Td>
                   <Td>
                     {instructors.length === 0 && '-'}
