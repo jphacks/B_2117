@@ -1,0 +1,4 @@
+similar_search/data/*.json
+similar_search/model/*.model
+similar_search/model/*.bin
+#similar_search/.git
