@@ -12,11 +12,15 @@ import {
   Td,
   TableCaption,
 } from '@chakra-ui/react';
+import { useRecoilState } from 'recoil';
 import { Link } from 'react-router-dom';
 import SyllabusSearchForm from '../organisms/SyllabusSearchForm';
+import { searchResultState } from '../state/searchResult';
 
 export const SyllabusSearchPage: React.FC = () => {
-  const [results, setResults] = useState<any[]>([]);
+  // const [results, setResults] = useState<any[]>([]);
+  const [results, setResults] = useRecoilState(searchResultState);
+
   const onSubmit = async ({
     year,
     period,
@@ -24,17 +28,14 @@ export const SyllabusSearchPage: React.FC = () => {
     periodOfTime,
     degreeProgram,
     typeOfLesson,
+    keyword,
   }: any) => {
-    console.log(
-      `http://localhost:10000/search/syllabus?year=${year}&period=${period}&dayOfWeek=${dayOfWeek}&periofOfTime=${periodOfTime}&degreeProgram=${degreeProgram}&typeOfLesson=${typeOfLesson}`,
-    );
     const res = await fetch(
-      `http://localhost:10000/search/syllabus?year=${year}&period=${period}&dayOfWeek=${dayOfWeek}&periodOfTime=${periodOfTime}&degreeProgram=${degreeProgram}&typeOfLesson=${typeOfLesson}`,
+      `http://localhost:10000/search/syllabus?year=${year}&period=${period}&dayOfWeek=${dayOfWeek}&periodOfTime=${periodOfTime}&degreeProgram=${degreeProgram}&typeOfLesson=${typeOfLesson}&keyword=${keyword}`,
       { mode: 'cors' },
     );
-    const j = await res.json();
-    setResults(j);
-    console.log(j);
+    const data = await res.json();
+    setResults(data);
   };
 
   return (

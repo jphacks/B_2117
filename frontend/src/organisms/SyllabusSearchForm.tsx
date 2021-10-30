@@ -7,6 +7,7 @@ import {
   Stack,
   Select,
   SimpleGrid,
+  Input,
 } from '@chakra-ui/react';
 import { FormLabel } from '@chakra-ui/react';
 import { useForm } from 'react-hook-form';
@@ -87,6 +88,14 @@ const SyllabusSearchForm: React.FC<Props> = ({ onSubmit }) => {
                   </option>
                 ))}
               </Select>
+            </FormControl>
+            <FormControl>
+              <FormLabel htmlFor="keyword">キーワード</FormLabel>
+              <Input
+                id="keyword"
+                placeholder="キーワード"
+                {...register('keyword')}
+              />
             </FormControl>
           </SimpleGrid>
           <Center>

@@ -61,6 +61,7 @@ export const Book: React.FC<Props> = ({ bookInfo }) => {
 
         setRes(res_t);
         setIsFetching(false);
+        console.log(res_t);
       }
 
       /**
@@ -82,8 +83,11 @@ export const Book: React.FC<Props> = ({ bookInfo }) => {
       {isbn !== null && isbn !== '' ? (
         <>
           <Heading as="h4" size="sm">
-            Doshisha
+            同志社大学内
           </Heading>
+          {res?.doshisha?.status === 'Error' && (
+            <div>情報が取得できませんでした</div>
+          )}
           {Object.entries(res?.doshisha?.libkey || {})?.map((arr: any) => {
             return (
               <Badge
@@ -104,8 +108,11 @@ export const Book: React.FC<Props> = ({ bookInfo }) => {
             );
           })}
           <Heading as="h4" size="sm">
-            Osaka pref
+            大阪府
           </Heading>
+          {res?.osaka_pref?.status === 'Error' && (
+            <div>情報が取得できませんでした</div>
+          )}
           {Object.entries(res?.osaka_pref?.libkey || {}).map((arr: any) => {
             return (
               <Badge
@@ -126,9 +133,11 @@ export const Book: React.FC<Props> = ({ bookInfo }) => {
             );
           })}
           <Heading as="h4" size="sm">
-            Osaka city
+            大阪市
           </Heading>
-
+          {res?.osaka_city?.status === 'Error' && (
+            <div>情報が取得できませんでした</div>
+          )}
           {Object.entries(res?.osaka_city?.libkey || {}).map((arr: any) => {
             return (
               <Badge
