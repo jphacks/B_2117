@@ -6,17 +6,10 @@ import {
   Divider,
   Stack,
   Badge,
-  Grid,
-  GridItem,
-  VStack,
-  HStack,
   Flex,
-  Text,
-  Spacer,
   Skeleton,
 } from '@chakra-ui/react';
 import { useParams } from 'react-router';
-import { searchISBN, searchLentState } from '../api/book';
 import { Book } from '../organisms/Book';
 
 export const CourseDetailPage: React.FC = () => {
@@ -27,7 +20,6 @@ export const CourseDetailPage: React.FC = () => {
   useEffect(() => {
     (async () => {
       setIsLoading(true);
-      // get syllabus detail
       const res = await fetch(
         `http://localhost:10000/search/syllabus/${params.year}/detail/${params.code}`,
       );

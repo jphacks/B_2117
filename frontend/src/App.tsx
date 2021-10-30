@@ -1,12 +1,6 @@
 import React from 'react';
 import { Routes, Route } from 'react-router';
-import {
-  RecoilRoot,
-  atom,
-  selector,
-  useRecoilState,
-  useRecoilValue,
-} from 'recoil';
+import { RecoilRoot } from 'recoil';
 import './App.css';
 import { CourseDetailPage } from './pages/CourseDetailPage';
 import { NotFoundPage } from './pages/NotFoundPage';

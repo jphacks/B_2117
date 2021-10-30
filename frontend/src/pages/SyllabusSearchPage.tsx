@@ -1,24 +1,11 @@
-import React, { useState } from 'react';
-import {
-  Heading,
-  Container,
-  Stack,
-  Table,
-  Thead,
-  Tbody,
-  Tfoot,
-  Tr,
-  Th,
-  Td,
-  TableCaption,
-} from '@chakra-ui/react';
+import React from 'react';
+import { Heading, Container, Table, Thead, Tr, Th, Td } from '@chakra-ui/react';
 import { useRecoilState } from 'recoil';
 import { Link } from 'react-router-dom';
 import SyllabusSearchForm from '../organisms/SyllabusSearchForm';
 import { searchResultState } from '../state/searchResult';
 
 export const SyllabusSearchPage: React.FC = () => {
-  // const [results, setResults] = useState<any[]>([]);
   const [results, setResults] = useRecoilState(searchResultState);
 
   const onSubmit = async ({

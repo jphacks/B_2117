@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Skeleton, Badge, Heading, Stack } from '@chakra-ui/react';
+import { Badge, Heading } from '@chakra-ui/react';
 import { produce } from 'immer';
 import { searchISBN, searchLentState } from '../api/book';
 
@@ -16,7 +16,6 @@ export const Book: React.FC<Props> = ({ bookInfo }) => {
   const [isFetching, setIsFetching] = useState(false);
   const [conn, setConn] = useState(1);
   const [isbn, setIsbn] = useState<any>('');
-  const [fetchError, setFetchError] = useState(false);
   useEffect(() => {
     (async () => {
       setIsFetching(true);
@@ -24,8 +23,6 @@ export const Book: React.FC<Props> = ({ bookInfo }) => {
         const isbn_obj = await searchISBN(
           bookInfo?.split('(')[0].replace(/\r?\n/g, ' '),
         );
-
-        console.log(isbn_obj);
         setIsbn(isbn_obj.ISBN_10 || isbn_obj.ISBN_13);
       }
 
@@ -40,10 +37,7 @@ export const Book: React.FC<Props> = ({ bookInfo }) => {
         try {
           /* eslint-disable no-await-in-loop */
           states = await searchLentState(isbn);
-          console.log(states);
         } catch {
-          console.log('wwww');
-
           return;
         }
 
@@ -61,7 +55,6 @@ export const Book: React.FC<Props> = ({ bookInfo }) => {
 
         setRes(res_t);
         setIsFetching(false);
-        console.log(res_t);
       }
 
       /**
@@ -75,7 +68,6 @@ export const Book: React.FC<Props> = ({ bookInfo }) => {
 
   return (
     <div style={{ marginBottom: '10px' }}>
-      {/* {JSON.stringify(res)} */}
       <p style={{ marginBottom: '5px', marginTop: '2px' }}>{bookInfo}</p>
       <Heading as="h3" size="sm">
         図書館の貸し出し状況
