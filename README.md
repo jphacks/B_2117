@@ -54,4 +54,4 @@
 * Doc2vecを用いた類似検索により，類似検索対象を絞ることでWMDで検索する対象を減らした． (類似講義検索)
 
 ## フォルダ説明
-* similar_search : 類似講義検索のプログラム(Python)
+* similar_search : 類似講義検索に関するプログラム(Python)
