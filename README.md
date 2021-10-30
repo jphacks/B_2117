@@ -1,5 +1,9 @@
 # 新しい大学シラバスの提案
 
+https://user-images.githubusercontent.com/44519854/139525139-47176d77-9c04-4331-aa3b-ff4f088bf43a.mov
+
+
+
 ![image](https://user-images.githubusercontent.com/53786083/139504949-2c6bdbd5-baad-4755-8e27-55ac26e52425.png)
 
 ## 製品概要
