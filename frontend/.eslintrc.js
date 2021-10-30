@@ -95,7 +95,7 @@ module.exports = {
     // react hooks
     'react-hooks/rules-of-hooks': 'error',
     'react-hooks/exhaustive-deps': 'error',
-
+    camelcase: 'off',
     // import
     'import/extensions': [
       'error',
