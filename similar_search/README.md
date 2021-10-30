@@ -56,6 +56,16 @@ python test_doc2vec.py
 python test_wmd.py
 ```
 
-実際にアプリに使うのは次の2つのうちの1つ．どっちか良いモデルを使ってください．多分改良しないとだめかもデータ読み込み方とか．
-- request_doc2vec.py : Doc2vecオンリー
-- request_wmd.py : Doc2vecとWMDのハイブリッド(少し重い)
+実際にアプリに使うのは次の2つのうちの1つ．どっちか良いモデルを使ってください．wmdの方は結構重い．
+- make_recommend_doc2vec_json.py
+- make_recommend_wmd_json.py
+
+Doc2vecオンリー
+```
+python make_recommend_doc2vec_json.py
+```
+
+Doc2vecとWMDのハイブリッド
+```
+python make_recommend_wmd_json.py
+```
