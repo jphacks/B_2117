@@ -10,11 +10,13 @@ import {
   Skeleton,
 } from '@chakra-ui/react';
 import { useParams } from 'react-router';
+import { Link } from 'react-router-dom';
 import { Book } from '../organisms/Book';
 
 export const CourseDetailPage: React.FC = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [detail, setDetail] = useState<any>({});
+  const [recommends, setRecommends] = useState<any[]>([]);
   const params = useParams();
 
   useEffect(() => {
@@ -26,6 +28,18 @@ export const CourseDetailPage: React.FC = () => {
 
       const syllabus = await res.json();
       setDetail(syllabus);
+
+      let recommendRes;
+      try {
+        recommendRes = await fetch(
+          `http://localhost:10000/recommend/${params.code}`,
+        );
+        const recs = await recommendRes.json();
+        setRecommends(recs);
+      } catch {
+        setRecommends([]);
+        console.log('error');
+      }
       setIsLoading(false);
     })();
   }, [params]);
@@ -166,6 +180,19 @@ export const CourseDetailPage: React.FC = () => {
         <Skeleton isLoaded={!isLoading}>
           <div>
             <Heading size="md">関連する科目</Heading>
+            {recommends.length === 0 && '関連する科目が探せませんでした'}
+            {recommends.map((recommend: any) => {
+              return (
+                <>
+                  <Link
+                    to={`/course/detail/${recommend.year}/${recommend.code}`}
+                  >
+                    {recommend.name}
+                  </Link>
+                  <br />
+                </>
+              );
+            })}
           </div>
         </Skeleton>
       </Stack>
