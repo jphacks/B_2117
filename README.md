@@ -35,8 +35,6 @@
 * できるだけ学生生活を便利に！
 
 ## 開発技術
-* Doc2Vec, WMD (類似講義検索)
-* BeautifulSoup　（シラバスの検索ページおよび本文のスクレイピング）
 
 ### 活用した技術（クラウド・API・データ）
 * AWS
@@ -45,15 +43,18 @@
 * カーリルAPI
 * 大学のシラバス
 
-### 言語・フレームワーク・ライブラリ・モジュールなど
-#### 機械学習
-* Python, Gensim, MeCab (類似講義検索)
+### 言語・フレームワーク・ライブラリ・モジュール・手法など
+#### 機械学習（類似講義検索）
+* Python, Gensim, MeCab
+* Doc2Vec, WMD
 #### フロントエンド
 * React, TypeScript, Chakra-ui
 #### デザイン
 * Figma
 #### バックエンド
 * AWS, Python, Golang, open-api
+#### データ作成（シラバスの検索ページおよび本文のスクレイピング）
+* BeautifulSoup
 
 
 ### 独自技術
