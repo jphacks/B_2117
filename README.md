@@ -54,7 +54,7 @@
 #### バックエンド
 * AWS, Python, Golang, open-api
 #### データ作成（シラバスの検索ページおよび本文のスクレイピング）
-* BeautifulSoup
+* Python, BeautifulSoup
 
 
 ### 独自技術
