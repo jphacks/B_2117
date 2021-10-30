@@ -1,0 +1,33 @@
+[
+  {
+    "code": "10101331",
+    "degreeProgram": "学部科目",
+    "name": "宗教学１１ (諸宗教の中のキリスト教)",
+    "instructors": [
+      "朝香　知己"
+    ],
+    "place": "今出川",
+    "num_credits": "2単位",
+    "day": "木曜日",
+    "classPeriod": "3講時",
+    "year": "2021",
+    "period": "秋",
+    "major": "神学部",
+    "url": ""
+  },
+  {
+    "code": "99000103-072",
+    "year": "2021",
+    "preiod": "春",
+    "degree": "その他",
+    "major": "日本語・日本文化教育科目",
+    "name": "日本語１（総合３Ⅰ）-72Japanese 1 (General 3 Ⅰ)-72",
+    "instructors": [
+      "下橋　美和"
+    ],
+    "place": "今出川",
+    "num_credits": "1単位",
+    "day": "火曜日",
+    "classPeriod": "1講時"
+  }
+]

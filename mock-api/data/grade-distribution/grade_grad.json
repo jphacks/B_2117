@@ -1,0 +1,26 @@
+{
+  "code": "31302023-000",
+  "year": "2021",
+  "period": "春",
+  "degreeProgram": "大学院科目",
+  "major": "ビジネス研究科",
+  "courseName": "Ｆｉｎａｎｃｅ",
+  "instructors": [
+    "LIU MING"
+  ],
+  "registerStudents": "14",
+  "grade": {
+    "distribution": {
+      "A+": "42.9",
+      "A": "21.4",
+      "B+": "7.1",
+      "B": "14.3",
+      "C+": "14.3",
+      "C": "0.0",
+      "D": "",
+      "F": "0.0",
+      "others": "0.0"
+    },
+    "average": "3.8"
+  }
+}
